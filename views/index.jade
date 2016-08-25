@@ -1,5 +1,18 @@
 extends layout
 
+
 block content
   h1= title
   p Welcome to #{title}
+  #LineDemo
+  -for (var x = 0; x < 3; x++)
+    li item
+
+  //-注释
+  //
+      块级注释
+      ul
+      fasf
+
+  script.
+        console.log(00)
