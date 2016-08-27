@@ -2,10 +2,9 @@ $(function(){
     var margin = {top:80,right:80,bottom:80,left:80},
         width = 600- margin.left - margin.right,
         height = 400 - margin.top - margin.bottom;
-    // var x = d3.scale.ordinal().rangeRoundBands([0,width],0.1);
-    var x = d3.scaleOrdinal().rangeRound([0,width],0.1);
-    var y0 = d3.scaleLinear().domain([300,1100]).range([height,0]);
-    var y1 = d3.scaleLinear().domain([20,80]).range([height,0]);
+    var x = d3.scale.ordinal().rangeRoundBands([0,width],0.1);
+    var y0 = d3.scale.linear().domain([300,1100]).range([height,0]);
+    var y1 = d3.scale.linear().domain([20,80]).range([height,0]);
 
     var xAxis = d3.svg.axis().scale(x).orient("bottom");
     var yAxisLeft = d3.svg.axis().scale(y0).ticks(4).orient("left");
