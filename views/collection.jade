@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/lib/plugin/jQuery/jQuery-2.2.0.min.js')
+    //-script(src='/lib/plugin/d3/d3.v4.js')
+    script(src='/lib/plugin/d3/d3-4.0/d3.js')
+    script(src='/view/js/index.js')
+  body
+    block content
+
+
+extends layout
+block content
+
+  body
+      #LineDemo
+      //
+          -for (var x = 0; x < 3; x++)
+            li item
+            p Welcome to #{title}
+            h1= title
+      //-注释
+      //
+          块级注释
+          ul
+          fasf
+          script.
+                console.log(00)
+          canvas.canvasBar(style={width:'960px',height:'500px'})
+          canvas.canvasBar(style="width:'960px';height:'500px'")
+
+
