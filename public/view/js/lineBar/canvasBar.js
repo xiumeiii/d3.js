@@ -132,6 +132,7 @@
 //     })
 // })
 
+
 //d3-3  wapping Long Labels
 $(function(){
     var margin = {top: 80, right: 180, bottom: 80, left: 180},
