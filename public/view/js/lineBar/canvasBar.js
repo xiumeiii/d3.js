@@ -132,26 +132,30 @@
 //     })
 // })
 
-
-//d3-3  wapping Long Labels
+//d3-3  d3-4 wapping Long Labels
 $(function(){
     var margin = {top: 80, right: 180, bottom: 80, left: 180},
         width = 960 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
-    var x = d3.scale.ordinal()
-        .rangeRoundBands([0, width], .1, .3);
+    //var x = d3.scale.ordinal()
+    //    .rangeRoundBands([0, width], .1, .3);
+    //var y = d3.scale.linear()
+    //    .range([height, 0]);
+    //var xAxis = d3.svg.axis()
+    //    .scale(x)
+    //    .orient("bottom");
+    //var yAxis = d3.svg.axis()
+    //    .scale(y)
+    //    .orient("left")
+    //    .ticks(8, "%");
 
-    var y = d3.scale.linear()
+    var x = d3.scaleBand()
+        .range([0, width]).padding(.2);
+    var y = d3.scaleLinear()
         .range([height, 0]);
-
-    var xAxis = d3.svg.axis()
-        .scale(x)
-        .orient("bottom");
-
-    var yAxis = d3.svg.axis()
-        .scale(y)
-        .orient("left")
+    var xAxis = d3.axisBottom().scale(x) ;
+    var yAxis = d3.axisLeft().scale(y)
         .ticks(8, "%");
 
     var svg = d3.select("#wappingLongLabels").append("svg")
@@ -175,7 +179,8 @@ $(function(){
             .attr("transform", "translate(0," + height + ")")
             .call(xAxis)
             .selectAll(".tick text")
-            .call(wrap, x.rangeBand());
+            //.call(wrap, x.rangeBand());
+            .call(wrap, x.bandwidth());
 
         svg.append("g")
             .attr("class", "y axis")
@@ -186,7 +191,8 @@ $(function(){
             .enter().append("rect")
             .attr("class", "bar")
             .attr("x", function(d) { return x(d.name); })
-            .attr("width", x.rangeBand())
+            //.attr("width", x.rangeBand())
+            .attr("width",  x.bandwidth())
             .attr("y", function(d) { return y(d.value); })
             .attr("height", function(d) { return height - y(d.value); });
     });
@@ -198,7 +204,7 @@ $(function(){
                 word,
                 line = [],
                 lineNumber = 0,
-                lineHeight = 1.1, // ems
+                lineHeight = 1.1,
                 y = text.attr("y"),
                 dy = parseFloat(text.attr("dy")),
                 tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
@@ -209,7 +215,11 @@ $(function(){
                     line.pop();
                     tspan.text(line.join(" "));
                     line = [word];
-                    tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                    tspan = text.append("tspan")
+                        .attr("x", 0)
+                        .attr("y", y)
+                        .attr("dy", ++lineNumber * lineHeight + dy + "em")
+                        .text(word);
                 }
             }
         });
