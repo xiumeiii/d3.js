@@ -4,4 +4,4 @@ d3-v3(3.5.17)API:
 
 d3-v3(4.2.2)API:
 
-[d3-v4API](https://github.com/tianxuzhang/d3.v4-API-Translation/blob/master/README.md)
+[D3.js 4.0 API中文手册](https://github.com/tianxuzhang/d3.v4-API-Translation/blob/master/README.md)
