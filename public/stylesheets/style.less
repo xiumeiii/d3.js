@@ -153,3 +153,115 @@ a {
     shape-rendering: crispEdges;
   }
 }
+#inlineLabels{
+    text {
+      font: 10px sans-serif;
+    }
+
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+
+    .line {
+      fill: none;
+      stroke-width: 1.5px;
+    }
+
+    .label {
+      text-anchor: middle;
+    }
+
+    .label rect {
+      fill: white;
+    }
+
+    .label-key {
+      font-weight: bold;
+    }
+
+}
+
+#lineWithMissingData{
+  body {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .area {
+    fill: lightsteelblue;
+  }
+
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+
+  .dot {
+    fill: white;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+}
+
+#rainbowPerceptualDistance{
+  .axis {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .axis--y path {
+    display: none;
+  }
+
+  .line path {
+    fill: none;
+    stroke-width: 1.5px;
+    stroke-linejoin: round;
+  }
+
+  .line text {
+    font: bold 12px sans-serif;
+    text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  }
+}
+
+#monotoneInterpolation{
+  body {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+
+  .dot {
+    fill: white;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+}
