@@ -33,7 +33,7 @@ $(function(){
         .on("mouseout", arcTween(outerRadius - 20, 150));
 
     function arcTween(outerRadius, delay) {
-        return function() {
+            return function() {
             d3.select(this).transition().delay(delay).attrTween("d", function(d) {
                 var i = d3.interpolate(d.outerRadius, outerRadius);
                 return function(t) {
