@@ -9,3 +9,60 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='/lib/plugin/jQuery/jQuery-2.2.0.min.js')
     script(src='/lib/plugin/bootstrap-3.3.0/dist/js/bootstrap.js')
+
+    //-d3-3.5.17
+    //-script(src='/lib/plugin/d3/d3.v3.js')
+    //-d3-4.2.2
+    // script(src='/lib/plugin/d3/d3-4.0/d3.js')
+
+    //-官网d3-v4
+    //-script(src="https://d3js.org/d3.v4.js")
+    //-script(src="https://d3js.org/d3.v4.0.0-alpha.9.min.js")
+    //-官网d3-v3
+    script(src="https://d3js.org/d3.v3.js")
+
+    //-script(src='/view/js/index.js')
+    //-script(src='/view/js/lineBar/bar.js')
+    //-script(src='/view/js/lineBar/line.js')
+    //-script(src='/view/js/pie/pie.js')
+    body
+        .bs-example
+                nav(class="navbar navbar-inverse" role="navigation")
+                    .container-fluid
+                        div(class="collapse navbar-collapse")
+                           ul(class="nav navbar-nav")
+                               li(class="active dropdown")
+                                   a(href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false") line
+                                       span(class="caret")
+                                   ul(class="dropdown-menu" role="menu")
+                                       li
+                                           a(href="#") sankeyInterpolation
+                                       li
+                                           a(href="#") inlineLabels
+                                       li
+                                           a(href="#") lineWithMissingData
+                                       li
+                                           a(href="#") rainbowPerceptualDistance
+                                       li
+                                           a(href="#") monotoneInterpolation
+                               li(class="dropdown")
+                                   a(href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false") bar
+                                       span(class="caret")
+                                   ul(class="dropdown-menu" role="menu")
+                                       li
+                                           a(href="#") canvasBarChart
+                                       li
+                                           a(href="#") wappingLongLabels
+                                       li
+                                           a(href="#") barChartIIIa
+                                       li
+                                           a(href="#") barChartIIIb
+                                       li
+                                           a(href="#") barChartIIIc
+                                       li
+                                           a(href="#") barChartIIb
+                                       li
+                                           a(href="#") barChartIIc
+                               li
+                                   a(href="#") pie
+    block content
