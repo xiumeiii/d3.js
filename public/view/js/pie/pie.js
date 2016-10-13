@@ -1,5 +1,9 @@
-//extendingArcs
 $(function(){
+    extendingArcs();
+})
+
+//extendingArcs d3.v3
+var extendingArcs = function(){
     var data = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
 
     var width = 960,
@@ -33,7 +37,7 @@ $(function(){
         .on("mouseout", arcTween(outerRadius - 20, 150));
 
     function arcTween(outerRadius, delay) {
-            return function() {
+        return function() {
             d3.select(this).transition().delay(delay).attrTween("d", function(d) {
                 var i = d3.interpolate(d.outerRadius, outerRadius);
                 return function(t) {
@@ -42,4 +46,4 @@ $(function(){
             });
         };
     }
-})
+}
