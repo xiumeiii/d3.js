@@ -7,8 +7,7 @@ d3-v3(4.2.2)API:
 [D3.js 4.0 API中文手册](https://github.com/tianxuzhang/d3.v4-API-Translation/blob/master/README.md)
 
 遇坑总结：
-（一）
-    1.svg的样式属性：stroker、stroke-width、stroke-opacity
-                fill、fill-opacity、opacity、rx、ry、scale、rotate、skew
-（二）github
-    1.github进入项目时，文件搜索的快捷键：直接在当前页面按T键，输入文件名称，会自动筛选文件出来
+### svg
+    1. svg的样式属性：stroker、stroke-width、stroke-opacity、fill、fill-opacity、opacity、rx、ry、scale、rotate、skew
+### github
+    1. github进入项目时，文件搜索的快捷键：直接在当前页面按T键，输入文件名称，会自动筛选文件出来
