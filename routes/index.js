@@ -5,9 +5,9 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'd3Demo' });
 });
-$('.dropdown li').click(function(){
-  $(this).find("a").text()
-});
+//$('.dropdown li').click(function(){
+//  $(this).find("a").text()
+//});
 //router.get('/getUser', function(req, res, next) {
 //  res.send({
 //    'user':'aaa'
