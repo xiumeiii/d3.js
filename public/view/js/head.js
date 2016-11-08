@@ -1,5 +1,5 @@
 $(function(){
-    //$('.dropdown li').click(function(){
-    //    $(this).find("a").text()
-    //});
+    $('.dropdown li a').click(function(){
+        $(this).parents(".dropdown").addClass("active").siblings().removeClass("active");
+    });
 })

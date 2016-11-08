@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'd3Demo' });
+  res.render('index', { title: '柱状图' });
 });
 //$('.dropdown li').click(function(){
 //  $(this).find("a").text()
