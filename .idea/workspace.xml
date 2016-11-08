@@ -71,8 +71,8 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="89" column="42" selection-start-line="89" selection-start-column="42" selection-end-line="89" selection-end-column="42" />
+            <state relative-caret-position="343">
+              <caret line="1634" column="21" selection-start-line="1634" selection-start-column="21" selection-end-line="1634" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -132,6 +132,7 @@
         <option value="$PROJECT_DIR$/public/lib/plugin/d3/d3-3/d3.v3.js" />
         <option value="$PROJECT_DIR$/views/head.jade" />
         <option value="$PROJECT_DIR$/public/view/js/lineBar/bar.js" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -876,7 +877,7 @@
       <workItem from="1473428382886" duration="3071000" />
       <workItem from="1474201142976" duration="5998000" />
       <workItem from="1476359854982" duration="5947000" />
-      <workItem from="1478605141433" duration="7199000" />
+      <workItem from="1478605141433" duration="7441000" />
     </task>
     <task id="LOCAL-00001" summary="添加组件和js文件">
       <created>1472138964650</created>
@@ -1165,11 +1166,18 @@
       <option name="project" value="LOCAL" />
       <updated>1478614564384</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="添加jade模板文件的格式化代码的设置">
+      <created>1478614660471</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1478614660471</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77235000" />
+    <option name="totallyTimeSpent" value="77477000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -1187,7 +1195,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31965443" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18142548" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1220,7 +1228,8 @@
     <MESSAGE value="调整文件结构及内容" />
     <MESSAGE value="绘制柱状图" />
     <MESSAGE value="对个图形的分类，并以不同的路由指向不同的图形展示页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="对个图形的分类，并以不同的路由指向不同的图形展示页面" />
+    <MESSAGE value="添加jade模板文件的格式化代码的设置" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加jade模板文件的格式化代码的设置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1621,8 +1630,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="89" column="42" selection-start-line="89" selection-start-column="42" selection-end-line="89" selection-end-column="42" />
+        <state relative-caret-position="343">
+          <caret line="1634" column="21" selection-start-line="1634" selection-start-column="21" selection-end-line="1634" selection-end-column="21" />
           <folding />
         </state>
       </provider>
