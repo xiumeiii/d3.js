@@ -1,8 +1,30 @@
-
 $(function(){
     // barChartIIb();
     wappingLongLabels();
-
+    $('.bar').addClass("active");
+    $('.bar li a').click(function(){
+        $("svg").remove();
+        switch($(this).text()){
+            case "canvasBarChart":
+                canvasBarChart();
+                break;
+            case "wappingLongLabels":
+                wappingLongLabels();
+                break;
+            case "barChartIIIb":
+                barChartIIIb();
+                break;
+            case "barChartIIIc":
+                barChartIIIc();
+                break;
+            case "barChartIIb":
+                barChartIIb();
+                break;
+            case "barChartIIc":
+                barChartIIc();
+                break;
+        }
+    });
 })
 
 

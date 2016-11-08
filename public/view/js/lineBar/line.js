@@ -1,4 +1,5 @@
 $(function(){
+    $('.line').addClass("active");
     sankeyInterpolation();
     // monotoneInterpolation();
 })

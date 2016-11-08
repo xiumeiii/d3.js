@@ -1,4 +1,5 @@
 $(function(){
+    $('.pie').addClass("active");
     extendingArcs();
 })
 
