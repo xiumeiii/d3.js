@@ -1,6 +1,14 @@
 $(function(){
-    $('.pie').addClass("active");
     extendingArcs();
+    $('.pie').addClass("active");
+    $('.pie li a').click(function(){
+        $("svg").remove();
+        switch($(this).text()){
+            case "extendingArcs":
+                extendingArcs();
+                break;
+        }
+    });
 })
 
 //extendingArcs d3.v3

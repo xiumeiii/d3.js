@@ -1,7 +1,32 @@
 $(function(){
-    $('.line').addClass("active");
-    sankeyInterpolation();
+
+
     // monotoneInterpolation();
+    sankeyInterpolation();
+    $('.line').addClass("active");
+    $('.line li a').click(function(){
+        $("svg").remove();
+        switch($(this).text()){
+            case "sankeyInterpolation":
+                sankeyInterpolation();
+                break;
+            case "naturalLogScale":
+                naturalLogScale();
+                break;
+            case "inlineLabels":
+                inlineLabels();
+                break;
+            case "lineWithMissingData":
+                lineWithMissingData();
+                break;
+            case "rainbowPerceptualDistance":
+                rainbowPerceptualDistance();
+                break;
+            case "monotoneInterpolation":
+                monotoneInterpolation();
+                break;
+        }
+    });
 })
 
 
