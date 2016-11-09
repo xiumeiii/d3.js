@@ -1,8 +1,4 @@
 $(function(){
-    inlineLabels();
-    //lineWithMissingData();
-    //rainbowPerceptualDistance();
-    //monotoneInterpolation();
 
     // monotoneInterpolation();
     sankeyInterpolation();
@@ -272,7 +268,7 @@ var inlineLabels = function(){
     });
 }
 
-// lineWithMissingData d3-4.0
+// lineWithMissingData d3-4.0  /lib/plugin/d3/download/d3-4/d3.v4.0.0-alpha.4.js
 var lineWithMissingData = function(){
     var data = d3.range(40).map(function(i) {
         //return i % 5 ? {x: i / 39, y: (Math.sin(i / 3) + 2) / 4} : null;
@@ -331,7 +327,7 @@ var lineWithMissingData = function(){
         .attr("r", 3.5);
 }
 
-// rainbowPerceptualDistance
+// rainbowPerceptualDistance  /lib/plugin/d3/download/d3-4/d3.v4.0.0-alpha.29.js
 var rainbowPerceptualDistance = function(){
     var data = [
         {name: "HSL Rainbow", labelOffset: 60, value: function(t) {
@@ -435,7 +431,7 @@ var rainbowPerceptualDistance = function(){
     }
 }
 
-// d3-4 monotoneInterpolation
+// d3-4 monotoneInterpolation /lib/plugin/d3/download/d3-3/d3.v3.js
 var monotoneInterpolation = function(){
     var data = [
         [new Date(2001, 0, 1), 1],
