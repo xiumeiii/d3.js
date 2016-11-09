@@ -3,7 +3,7 @@ html
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    //-meta(name='viewport' content=width='device-width', initial-scale=1)
+    //meta(name='viewport' content=width='device-width', initial-scale=1)
     meta(name='viewport')
     title= title
     link(rel='stylesheet', href='/lib/plugin/bootstrap-3.3.0/dist/css/bootstrap.css')
@@ -14,19 +14,14 @@ html
     //-d3-3.5.17
     //-script(src='/lib/plugin/d3/d3.v3.js')
     //-d3-4.2.2
-    //-script(src='/lib/plugin/d3/d3-4.0/d3.js')
+    script(src='/lib/plugin/d3/d3-4.0/d3.js')
 
     //-官网d3-v4
-    //-script(src="https://d3js.org/d3.v4.js")
-    //-script(src="https://d3js.org/d3.v4.0.0-alpha.9.min.js")
+    //script(src="https://d3js.org/d3.v4.js")
+    //script(src="https://d3js.org/d3.v4.0.0-alpha.9.min.js")
     //-官网d3-v3
     //-script(src="https://d3js.org/d3.v3.js")
-    script(src="/lib/plugin/d3/d3-3/d3.v3.js")
-
-    //-script(src='/view/js/index.js')
-    //-script(src='/view/js/lineBar/bar.js')
-    //-script(src='/view/js/lineBar/line.js')
-    //-script(src='/view/js/pie/pie.js')
+    //script(src="/lib/plugin/d3/download/d3-3/d3.v3.js")
     body
         .bs-example
                 nav(class="navbar navbar-inverse" role="navigation")
@@ -38,9 +33,9 @@ html
                                       span(class="caret")
                                     ul(class="dropdown-menu" role="menu")
                                         li
-                                            a(href="#") canvasBarChart
-                                        li
-                                            a(href="#") wappingLongLabels
+                                            a(href="/") wappingLongLabels
+                                        //li
+                                        //    a(href="#") canvasBarChart
                                         li
                                             a(href="#") barChartIIIa
                                         li
@@ -57,6 +52,8 @@ html
                                    ul(class="dropdown-menu" role="menu")
                                        li
                                            a(href="line") sankeyInterpolation
+                                       li
+                                           a(href="#") naturalLogScale
                                        li
                                            a(href="#") inlineLabels
                                        li
