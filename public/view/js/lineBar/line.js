@@ -1,5 +1,8 @@
 $(function(){
-
+    inlineLabels();
+    //lineWithMissingData();
+    //rainbowPerceptualDistance();
+    //monotoneInterpolation();
 
     // monotoneInterpolation();
     sankeyInterpolation();
@@ -156,6 +159,7 @@ var naturalLogScale = function(){
 // inlineLabels https://d3js.org/d3.v4.0.0-alpha.9.min.js
 
 var inlineLabels = function(){
+    alert(0)
     var parseTime = d3.timeParse("%Y");
 
     var svg = d3.select("#inlineLabels").append("svg")
@@ -431,7 +435,7 @@ var rainbowPerceptualDistance = function(){
     }
 }
 
-// monotoneInterpolation
+// d3-4 monotoneInterpolation
 var monotoneInterpolation = function(){
     var data = [
         [new Date(2001, 0, 1), 1],
