@@ -1,5 +1,4 @@
 $(function(){
-
     // monotoneInterpolation();
     sankeyInterpolation();
     $('.line').addClass("active");
@@ -12,15 +11,15 @@ $(function(){
             case "naturalLogScale":
                 naturalLogScale();
                 break;
-            case "inlineLabels":
-                inlineLabels();
-                break;
-            case "lineWithMissingData":
-                lineWithMissingData();
-                break;
-            case "rainbowPerceptualDistance":
-                rainbowPerceptualDistance();
-                break;
+            //case "inlineLabels":
+            //    inlineLabels();
+            //    break;
+            //case "lineWithMissingData":
+            //    lineWithMissingData();
+            //    break;
+            //case "rainbowPerceptualDistance":
+            //    rainbowPerceptualDistance();
+            //    break;
             case "monotoneInterpolation":
                 monotoneInterpolation();
                 break;
@@ -31,6 +30,69 @@ $(function(){
 
 //sankeyInterpolation d3.v3
 var sankeyInterpolation = function(){
+    //d3-v4
+    /*//var pointArr = [[0,450],[222.5, 192.85714285714286],[445, 321.42857142857144],[667.5, 0],[890, 192.85714285714286]];
+    var margin = {top:20,right:30,bottom:30,left:40},
+        width = 960 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+
+    var x = d3.scaleLinear()
+        .range([0,width]);
+    var y = d3.scaleLinear()
+        .range([height,0]);
+    var xAxis = d3.axisBottom().scale(x);
+    var yAxis = d3.axisLeft().scale(y);
+
+    var compute= d3.interpolate([[0,450],[222.5, 192.85714285714286],[445, 321.42857142857144],[667.5, 0],[890, 192.85714285714286]]);
+    var line = d3.line()
+        //.interpolate(interpolateSankey)
+        .x(function(d){
+            return x(d.x);
+        })
+        .y(function(d){
+            return y(d.y);
+        });
+    compute(line());
+
+    var svg = d3.select("#sankeyInterpolation").append("svg")
+        .attr("width",width + margin.left + margin.right)
+        .attr("height",height + margin.top + margin.bottom)
+        .append('g')
+        .attr("transform","translate(" + margin.left + "," + margin.top + ")");
+    d3.csv("./../data/lineBar/sankeyInterpolation.csv",function(error,data){
+        if(error) throw error;
+        data.forEach(function(d){
+            d.x = + d.x;
+            d.y = + d.y;
+        });
+        x.domain(d3.extent(data, function(d) { return d.x; }));
+        y.domain(d3.extent(data, function(d) { return d.y; }));
+        svg.append("g")
+            .attr("class","x axis")
+            .attr("transform","translate(0," + height +")")
+            .call(xAxis);
+        svg.append("g")
+            .attr("class","y axis")
+            .call(yAxis);
+        svg.append("path")
+            .datum(data)
+            .attr("class","line")
+            .attr("d",line);
+    })
+    function interpolateSankey(points){
+        var x0 = points[0][0],y0 = points[0][1],x1,y1,x2,
+            path = [x0,",",y0],
+            i = 0,
+            n = points.length;
+        while(++i < n){
+            x1 = points[i][0],y1 = points[i][1],x2 = (x0 + x1)/2;
+            path.push("C",x2,",",y0," ",x2,",",y1," ",x1,",",y1);
+            x0 = x1, y0 = y1;
+        }
+        return path.join("");
+    }*/
+
+    //d3-v3
     var margin = {top:20,right:30,bottom:30,left:40},
         width = 960 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
@@ -44,6 +106,7 @@ var sankeyInterpolation = function(){
     var yAxis = d3.svg.axis()
         .scale(y)
         .orient("left");
+
     var line = d3.svg.line()
         .interpolate(interpolateSankey)
         .x(function(d){
@@ -52,6 +115,7 @@ var sankeyInterpolation = function(){
         .y(function(d){
             return y(d.y);
         });
+
     var svg = d3.select("#sankeyInterpolation").append("svg")
         .attr("width",width + margin.left + margin.right)
         .attr("height",height + margin.top + margin.bottom)
@@ -152,10 +216,9 @@ var naturalLogScale = function(){
         .attr("d", line);
 }
 
-// inlineLabels https://d3js.org/d3.v4.0.0-alpha.9.min.js
+// inlineLabels /lib/plugin/d3/download/d3-4/d3.v4.0.0-alpha.9.min.js(https://d3js.org/d3.v4.0.0-alpha.9.min.js)
 
 var inlineLabels = function(){
-    alert(0)
     var parseTime = d3.timeParse("%Y");
 
     var svg = d3.select("#inlineLabels").append("svg")

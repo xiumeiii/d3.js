@@ -113,13 +113,13 @@ var wappingLongLabels = function(){
        .orient("left")
        .ticks(8, "%");
 
-    // var x = d3.scaleBand()
-    //     .range([0, width]).padding(.2);
-    // var y = d3.scaleLinear()
-    //     .range([height, 0]);
-    // var xAxis = d3.axisBottom().scale(x) ;
-    // var yAxis = d3.axisLeft().scale(y)
-    //     .ticks(8, "%");
+     //var x = d3.scaleBand()
+     //    .range([0, width]).padding(.2);
+     //var y = d3.scaleLinear()
+     //    .range([height, 0]);
+     //var xAxis = d3.axisBottom().scale(x) ;
+     //var yAxis = d3.axisLeft().scale(y)
+     //    .ticks(8, "%");
 
     var svg = d3.select("#wappingLongLabels").append("svg")
         .attr("width", width + margin.left + margin.right)
@@ -143,7 +143,7 @@ var wappingLongLabels = function(){
             .call(xAxis)
             .selectAll(".tick text")
             .call(wrap, x.rangeBand());
-            // .call(wrap, x.bandwidth());
+             //.call(wrap, x.bandwidth());
 
         svg.append("g")
             .attr("class", "y axis")
@@ -155,7 +155,7 @@ var wappingLongLabels = function(){
             .attr("class", "bar")
             .attr("x", function(d) { return x(d.name); })
             .attr("width", x.rangeBand())
-            // .attr("width",  x.bandwidth())
+             //.attr("width",  x.bandwidth())
             .attr("y", function(d) { return y(d.value); })
             .attr("height", function(d) { return height - y(d.value); });
     });
@@ -298,6 +298,7 @@ var barChartIIIc = function(){
     var margin = {top: 20, right: 30, bottom: 30, left: 40},
         width = 960 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
+
      var x = d3.scale.ordinal()
          .rangeRoundBands([0,width],.1);
      var y = d3.scale.linear()
@@ -361,13 +362,19 @@ var barChartIIIc = function(){
     }
 }
 
-//d3-v3  barChartIIb
+//d3-v3  d3-v4 barChartIIb
 var barChartIIb = function(){
     var data = [4,8,15,16,23,42];
     var width = 420,barHeight = 20;
+
     var x = d3.scale.linear()
         .domain([0,d3.max(data)])
         .range([0,width]);
+
+    //var x = d3.scaleLinear()
+    //    .domain([0,d3.max(data)])
+    //    .range([0,width]);
+
     var chart = d3.select("#barChartIIb").append("svg").attr("class","chart")
         .attr("width",width)
         .attr("height",barHeight * data.length);
@@ -390,13 +397,16 @@ var barChartIIb = function(){
         });
 }
 
-// d3-v3  barChartIIc
+// d3-v3  d3-v4 barChartIIc
 var barChartIIc = function(){
     var width = 420,
         barHeight = 20;
 
     var x = d3.scale.linear()
         .range([0, width]);
+
+    //var x = d3.scaleLinear()
+    //    .range([0, width]);
 
     var chart = d3.select("#barChartIIc").append("svg").attr("class","chart")
         .attr("width", width);
