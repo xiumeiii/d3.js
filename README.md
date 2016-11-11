@@ -14,3 +14,4 @@ d3-v3(4.2.2)API:
 
 ### 问题遗留
     1. d3.interpolate的v3版本能实现插值，v4插值实现？？？
+    2. svg的css设置圆角矩形？？（js可以设置attr("rx",2)和attr("ry",2)）
