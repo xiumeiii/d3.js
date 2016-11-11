@@ -445,7 +445,8 @@ var barChartIIc = function(){
 var updateOverAnimate = function(){
     $(".bar-operate").show();
     //(1) 准备数据集
-    var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,11, 12, 15, 20, 18, 17, 16, 18, 23, 25];
+    //var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,11, 12, 15, 20, 18, 17, 16, 18, 23, 25];
+    var dataset = [ 5, 10, 12, 18, 20];
 
     //(2) 设置SVG的高宽
     var w=600;
@@ -506,7 +507,8 @@ var updateOverAnimate = function(){
         })
         .attr("font-family", "sans-serif")
         .attr("font-size",function(d) {
-            return xScale.rangeBand()/2;
+            //return xScale.rangeBand()/2;
+            return xScale.rangeBand()/8;
         })
         .attr("fill", "white");
 
@@ -521,10 +523,10 @@ var updateOverAnimate = function(){
             var bars=svg.selectAll("rect")
                 .data(dataset);
 
-            bars.exit()
-                .transition()
-                .duration(500)
-                .attr("x", w)
+            bars.exit() //被删除的元素
+                .transition()//为选定的元素安排一个过渡
+                .duration(500)//动画持续的时间（以毫米为单位）
+                .attr("x", w)//动画到那个x=w的地方结束
                 .remove();
         });
 
@@ -532,7 +534,8 @@ var updateOverAnimate = function(){
     d3.select("#bar-add")
         .on("click",function(){
             //数据集最后添加数值
-            var maxValue=75;
+            //var maxValue=75;
+            var maxValue=20;
             var newNumber =Math.floor(Math.random()*maxValue);//0-24的整数
             dataset.push(newNumber);
 
@@ -550,7 +553,7 @@ var updateOverAnimate = function(){
             bars.enter()
                 .append("rect")
                 .attr("x",w);//在SVG最右边，不可见
-            //
+
             texts.enter()
                 .append("text");
 

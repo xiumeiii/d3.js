@@ -15,3 +15,4 @@ d3-v3(4.2.2)API:
 ### 问题遗留
     1. d3.interpolate的v3版本能实现插值，v4插值实现？？？
     2. svg的css设置圆角矩形？？（js可以设置attr("rx",2)和attr("ry",2)）
+    3. ease有哪些属性？？ease("linear")//(11)缓动函数：有circle（加速）elastic（伸缩），linear（匀速），bounce（弹跳）：
