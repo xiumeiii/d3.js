@@ -3,8 +3,8 @@ $(function(){
     $('.pie').addClass("active");
     $('.pie li a').click(function(){
         $("svg").remove();
-        switch($(this).text()){
-            case "extendingArcs":
+        switch($(this).attr("id")){
+            case "href-extendingArcs":
                 extendingArcs();
                 break;
         }

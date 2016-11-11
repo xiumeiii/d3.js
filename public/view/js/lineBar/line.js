@@ -4,23 +4,23 @@ $(function(){
     $('.line').addClass("active");
     $('.line li a').click(function(){
         $("svg").remove();
-        switch($(this).text()){
-            case "sankeyInterpolation":
+        switch($(this).attr("id")){
+            case "href-sankeyInterpolation":
                 sankeyInterpolation();
                 break;
-            case "naturalLogScale":
+            case "href-naturalLogScale":
                 naturalLogScale();
                 break;
-            //case "inlineLabels":
+            //case "href-inlineLabels":
             //    inlineLabels();
             //    break;
-            //case "lineWithMissingData":
+            //case "href-lineWithMissingData":
             //    lineWithMissingData();
             //    break;
-            //case "rainbowPerceptualDistance":
+            //case "href-rainbowPerceptualDistance":
             //    rainbowPerceptualDistance();
             //    break;
-            case "monotoneInterpolation":
+            case "href-monotoneInterpolation":
                 monotoneInterpolation();
                 break;
         }
