@@ -14,6 +14,16 @@ block content
                 button(id="bar-update") 单击更新
                 button(id="bar-add") 单击添加
                 button(id="bar-delete") 单击删除
-
+        #keyBindToData
+            .bar-operate-key-data(hidden="hidden")
+                button(id="bar-update-key-data") 单击更新
+                button(id="bar-add-key-data" class="key-data") 单击添加
+                button(id="bar-delete-key-data" class="key-data") 单击删除
+                #tooltip.hidden
+                    p
+                        strong 提示：
+                    p
+                        span#value 100%
+                        |%
     script(src='/view/js/lineBar/bar.js')
 
