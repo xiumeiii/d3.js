@@ -1,6 +1,29 @@
 $(function(){
     // monotoneInterpolation();
-    sankeyInterpolation();
+    //sankeyInterpolation();
+    var pathname = window.location.pathname;
+    switch(pathname.slice(pathname.lastIndexOf("/") +1)){
+        case "sankeyInterpolation":
+            sankeyInterpolation();
+            break;
+        case "naturalLogScale":
+            naturalLogScale();
+            break;
+        default:
+            sankeyInterpolation();
+        //case "inlineLabels":
+        //    inlineLabels();
+        //    break;
+        //case "lineWithMissingData":
+        //    lineWithMissingData();
+        //    break;
+        //case "rainbowPerceptualDistance":
+        //    rainbowPerceptualDistance();
+        //    break;
+        case "monotoneInterpolation":
+            monotoneInterpolation();
+            break;
+    }
     $('.line').addClass("active");
     $('.line li a').click(function(){
         $("svg").remove();
@@ -208,12 +231,12 @@ var naturalLogScale = function(){
         .attr("transform", "translate(0," + (height) + ")")
         .call(xAxis);
 
-    svg.append("path")
-        .datum(d3.range(100).map(function(x) {
-            return [x, x * x + x + 1];
-        }))
-        .attr("class", "line")
-        .attr("d", line);
+svg.append("path")
+    .datum(d3.range(100).map(function(x) {
+        return [x, x * x + x + 1];
+    }))
+    .attr("class", "line")
+    .attr("d", line);
 }
 
 // inlineLabels /lib/plugin/d3/download/d3-4/d3.v4.0.0-alpha.9.min.js(https://d3js.org/d3.v4.0.0-alpha.9.min.js)

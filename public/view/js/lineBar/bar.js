@@ -659,49 +659,89 @@ var updateOverAnimate = function(){
 var keyBindToData = function(){
     $(".bar-operate-key-data").show();
 //键值对数据集
-    var dataset = [
-        {key : 0,value : 5},
-        {key : 1,value : 10},
-        {key : 2,value : 13},
-        {key : 3,value : 19},
-        {key : 4,value : 21},
-        {key : 5,value : 25},
-        {key : 6,value : 22},
-        {key : 7,value : 18},
-        {key : 8,value : 15},
-        {key : 9,value : 13},
-        {key : 10,value : 11},
-        {key : 11,value : 12},
-        {key : 12,value : 15},
-        {key : 13,value : 20},
-        {key : 14,value : 18},
-        {key : 15,value : 17},
-        {key : 16,value : 16},
-        {key : 17,value : 18},
-        {key : 18,value : 23},
-        {key : 19,value : 25}];
+//    var dataset = [
+//        {key : 0,value : 5},
+//        {key : 1,value : 10},
+//        {key : 2,value : 13},
+//        {key : 3,value : 19},
+//        {key : 4,value : 21},
+//        {key : 5,value : 25},
+//        {key : 6,value : 22},
+//        {key : 7,value : 18},
+//        {key : 8,value : 15},
+//        {key : 9,value : 13}/*,
+//        {key : 10,value : 11},
+//        {key : 11,value : 12},
+//        {key : 12,value : 15},
+//        {key : 13,value : 20},
+//        {key : 14,value : 18},
+//        {key : 15,value : 17},
+//        {key : 16,value : 16},
+//        {key : 17,value : 18},
+//        {key : 18,value : 23},
+//        {key : 19,value : 25}*/];
     //键值对数据集
-    var dataset = [
-        {key:0,value:5},
-        {key:1,value:10},
-        {key:2,value:13},
-        {key:3,value:19},
-        {key:4,value:21},
-        {key:5,value:25},
-        {key:6,value:22},
-        {key:7,value:18},
-        {key:8,value:15},
-        {key:9,value:13},
-        {key:10,value:11},
-        {key:11,value:12},
-        {key:12,value:15},
-        {key:13,value:20},
-        {key:14,value:18},
-        {key:15,value:17},
-        {key:16,value:16},
-        {key:17,value:18},
-        {key:18,value:23},
-        {key:19,value:25}];
+    var dataset = [ {
+        key : 0,
+        value : 5
+    }, {
+        key : 1,
+        value : 10
+    }, {
+        key : 2,
+        value : 13
+    }, {
+        key : 3,
+        value : 19
+    }, {
+        key : 4,
+        value : 21
+    }, {
+        key : 5,
+        value : 25
+    }, {
+        key : 6,
+        value : 22
+    }, {
+        key : 7,
+        value : 18
+    }, {
+        key : 8,
+        value : 15
+    }, {
+        key : 9,
+        value : 13
+    }, {
+        key : 10,
+        value : 11
+    }, {
+        key : 11,
+        value : 12
+    }, {
+        key : 12,
+        value : 15
+    }, {
+        key : 13,
+        value : 20
+    }, {
+        key : 14,
+        value : 18
+    }, {
+        key : 15,
+        value : 17
+    }, {
+        key : 16,
+        value : 16
+    }, {
+        key : 17,
+        value : 18
+    }, {
+        key : 18,
+        value : 23
+    }, {
+        key : 19,
+        value : 25
+    } ];
     //设置SVG的高宽
     var w = 600;
     var h = 250;
@@ -747,7 +787,6 @@ var keyBindToData = function(){
             .attr("x", function(d, i) {//对排序之后的横坐标重排
                 return xScale(i);
             });
-
         svg.selectAll("text")
             .sort(function(a, b) {
                 if (sortOrders) {
@@ -806,11 +845,18 @@ var keyBindToData = function(){
                 .select("#value")
                 .text(d.value);
             d3.select("#tooltip").classed("hidden", false);
+            //鼠标悬浮时变成橘黄色
+            d3.select(this).attr("fill","orange");
         })
         //移除提示条
-        .on("mouseout", function() {
+        .on("mouseout", function(d) {
             //(4)添加隐藏类
             d3.select("#tooltip").classed("hidden", true);//ID 选择的语法："#tooltip"
+        //鼠标不在悬浮在改rect上时，恢复以前的颜色
+            d3.select(this)
+                .transition()
+                .duration(250)
+                .attr("fill","rgb(0,0,"+ d.value*10 + ")");
         });
 
     //为条加上数值

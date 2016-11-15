@@ -67,19 +67,31 @@ html
                                        span(class="caret")
                                    ul(class="dropdown-menu" role="menu")
                                        li
-                                           a(href="line" id="href-sankeyInterpolation") sankeyInterpolation
+                                           a(href="/line/sankeyInterpolation" id="href-sankeyInterpolation") sankeyInterpolation
                                        li
-                                           a(href="#" id="href-naturalLogScale") naturalLogScale
+                                           a(href="/line/naturalLogScale" id="href-naturalLogScale") naturalLogScale
                                        //li
-                                       //    a(href="#" id="href-inlineLabels") inlineLabels
+                                       //    a(href="/line/inlineLabels" id="href-inlineLabels") inlineLabels
                                        //li
-                                       //    a(href="#" id="href-lineWithMissingData") lineWithMissingData
+                                       //    a(href="/line/lineWithMissingData" id="href-lineWithMissingData") lineWithMissingData
                                        //li
-                                       //    a(href="#" id="href-rainbowPerceptualDistance") rainbowPerceptualDistance
+                                       //    a(href="/line/rainbowPerceptualDistance" id="href-rainbowPerceptualDistance") rainbowPerceptualDistance
                                        li
-                                           a(href="#" id="href-monotoneInterpolation") monotoneInterpolation
+                                           a(href="/line/monotoneInterpolation" id="href-monotoneInterpolation") monotoneInterpolation
 
                                li(class="pie dropdown")
-                                   a(href="pie" id="href-pie") pie
+                                   a(href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false") pie
+                                        span(class="caret")
+                                   ul(class="dropdown-menu" role="menu")
+                                       li
+                                           a(href="/pie" id="href-pie") pie
+                                       li
+                                           a(href="#" id="href-pieCircle") 饼图圆环图
+                               li(class="force dropdown")
+                                   a(href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false") force
+                                       span(class="caret")
+                                   ul(class="dropdown-menu" role="menu")
+                                       li
+                                           a(href="/force" id="href-force") 力导向图
         script(src='/view/js/head.js')
     block content
