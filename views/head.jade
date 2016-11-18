@@ -8,6 +8,8 @@ html
     title= title
     link(rel='stylesheet', href='/lib/plugin/bootstrap-3.3.0/dist/css/bootstrap.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='icon' href='/data/images/preview.png' type='image/x-ico')
+    link(rel='help' href='http://10.20.134.20/views/favicon.ico')
     script(src='/lib/plugin/jQuery/jQuery-2.2.0.min.js')
     script(src='/lib/plugin/bootstrap-3.3.0/dist/js/bootstrap.js')
 
@@ -93,5 +95,13 @@ html
                                    ul(class="dropdown-menu" role="menu")
                                        li
                                            a(href="/force" id="href-force") 力导向图
+                                       li
+                                           a(href="#" id="href-forceWithText") 带文字的力导向图
+                                       li
+                                           a(href="#" id="href-curvedArrowForce") 弧形箭头连线的力导向图
+                                           li
+                                               a(href="#" id="href-molecularFormula") 分子式的力导向图
+
+
         script(src='/view/js/head.js')
     block content

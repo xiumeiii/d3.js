@@ -18,3 +18,5 @@ d3-v3(4.2.2)API:
     3. ease有哪些属性？？ease("linear")//(11)缓动函数：有circle（加速）elastic（伸缩），linear（匀速），bounce（弹跳）：
     4. svg.selectAll("rect").data(dataset, key);这个为什么要用key或value的函数加载？？？？（keyBindToData-键联结数据实例）
     5. keyBindToData-键联结数据的sortBars排序不对，xScale(i)值是对的，但是rect的x值不对了???
+    6.力向导图的图片设置成圆形？？？
+

@@ -342,3 +342,70 @@ nav a{
   }
 
 }
+#forceWithText{
+  text{
+    fill:red;
+    &:hover{
+      fill:green;
+    }
+  }
+}
+
+#curvedArrowForce{
+  path.link {
+    fill: none;
+    stroke: #666;
+    stroke-width: 1.5px;
+  }
+
+  marker#licensing {
+    fill: green;
+  }
+
+  path.link.licensing {
+    stroke: green;
+  }
+
+  path.link.resolved {
+    stroke-dasharray: 0,2 1;
+  }
+
+  circle {
+    fill: #ccc;
+    stroke: #333;
+    stroke-width: 1.5px;
+  }
+
+  text {
+    font: 10px sans-serif;
+    pointer-events: none;
+  }
+
+  text.shadow {
+    stroke: #fff;
+    stroke-width: 3px;
+    stroke-opacity: .8;
+  }
+}
+
+#molecularFormula{
+  .link line {
+    stroke: #696969;
+  }
+  /* 分隔线的格式 透明的 */
+  .link line.separator {
+    stroke: #fff;
+    stroke-width: 2px;
+  }
+
+  .node circle {
+    stroke: #000;
+    stroke-width: 1.5px;
+  }
+
+  .node text {
+    font: 10px sans-serif;
+    pointer-events: none;
+  }
+}
+
