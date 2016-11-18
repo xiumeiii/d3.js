@@ -26,7 +26,10 @@ var force = function(){
     var w=600;
     // 颜色函数
     var colors=d3.scale.category20()//创建序数比例尺和包括20中颜色的输出范围
-
+    const colorMap = d3.interpolateRgb(//插补两个RGB颜色值
+        d3.rgb('#d6e685'),
+        d3.rgb('#1e6823')
+    )
     //(1)定义节点和联系对象数组
     var dataset={
         nodes:[//节点
@@ -83,7 +86,9 @@ var force = function(){
         .enter()
         .append("line")
         .style("stroke",function(d){//  设置线的颜色
+            console.log(colors(d.color))
             return colors(d.color);
+            //return colorMap(d.color/100);
         })
         .style("stroke-width",function(d,i){//设置线的宽度
             //return d.weight;

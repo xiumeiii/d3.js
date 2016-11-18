@@ -20,3 +20,5 @@ d3-v3(4.2.2)API:
     5. keyBindToData-键联结数据的sortBars排序不对，xScale(i)值是对的，但是rect的x值不对了???
     6.力向导图的图片设置成圆形？？？
 
+链接：
+    1. [moment.js](http://momentjs.cn/)
