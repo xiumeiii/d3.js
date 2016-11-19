@@ -73,7 +73,7 @@ var force = function(){
         .size([w,h])//设置有效空间的大小
         .linkDistance(100)//连线的长度
         .charge(-200)//负电荷量，相互排斥设置的负值越大越排斥
-        .start();//设置生效
+        .start();//设置生效,当节点变化时启动或者重启模拟。
 
     var svg=d3.select("#force")
         .append("svg")
@@ -86,7 +86,6 @@ var force = function(){
         .enter()
         .append("line")
         .style("stroke",function(d){//  设置线的颜色
-            console.log(colors(d.color))
             return colors(d.color);
             //return colorMap(d.color/100);
         })
@@ -102,6 +101,7 @@ var force = function(){
         .append("circle")
         .attr("r",function(d){//设置圆点的半径，圆点的度越大weight属性值越大，可以对其做一点数学变换
             return Math.log(d.weight)*10;
+            //return Math.log(2)*10;
         })
         .style("fill",function(d){
             return colors(d.weight*d.weight*d.weight);
@@ -114,12 +114,13 @@ var force = function(){
             d3.select(this).style('fill',colors(d.weight*d.weight*d.weight));
         });//可以拖动
     //dy表示Y轴对圆心的偏移量
-    nodes.append("text")
-        .attr("x", 12)
-        .attr("dy", ".35em")
-        .text(function(d) {
-            return d.name;
-        });
+    //nodes.append("text")
+    //    .attr("x", 12)
+    //    .attr("dy", ".35em")
+    //    .text(function(d) {
+    //        return d.name;
+    //    });
+
     //(5)打点更新，没有的话就显示不出来了
     //tick:运行布局模拟的一步。
     force.on("tick",function(){
@@ -137,14 +138,13 @@ var force = function(){
                 return  d.target.y;
             });
 
-        //节点
+        //节点,cx、cy圆心x和y坐标
         nodes.attr("cx",function(d){
                 return d.x;
             })
             .attr("cy",function(d){
                 return d.y;
             });
-
     })
 }
 
@@ -186,7 +186,6 @@ var forceWithText = function(){
     //(2)从链接中分离出不同的节点
     //一个小问题：节点的weight属性怎么产生的？
     links.forEach(function(link) {  //思路就是：在连接中遍历链接，节点数组有了这个链接的源节点就把链接指向这个节点。没有的话把链接上的节点加到链接数组指定名称name属性，并把链接指向这个节点
-        //console.log(nodes);
         link.source = nodes[link.source] //link.sourc就是节点值比如Apple
             || (nodes[link.source] = {name: link.source});//(填加节点数据)
 
@@ -197,7 +196,7 @@ var forceWithText = function(){
         height = 500;
 
     var force = d3.layout.force()
-        .nodes(d3.values(nodes))
+        .nodes(d3.values(nodes))//d3.values(object):返回一个包含指定对象(关联数组) 属性值的数组。返回数组的顺序未定义。{object}转化成[array]
         .links(links)
         .size([width, height])
         .linkDistance(100)
@@ -211,7 +210,8 @@ var forceWithText = function(){
 
     //(3)为链接添加线
     var link = svg.selectAll(".link")
-        .data(force.links())
+        //.data(force.links())
+        .data(links)
         .enter().append("line")
         .attr("class", "link");
 
@@ -257,7 +257,7 @@ var forceWithText = function(){
     //设置图片
     node.append("svg:image")
         .attr("class", "circle")
-        .attr("xlink:href", ".././data/images/ooo.png")
+        .attr("xlink:href", ".././data/images/ooo.png")//xlink:href图片的来源链接， SVG 2以后直接用href
         .attr("x", "-8px")
         .attr("y", "-8px")
         .attr("r",function(d){  //设置圆点半径
