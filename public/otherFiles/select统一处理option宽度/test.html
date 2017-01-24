@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="select" style="width:200px;height:26px;">
+        <option>很短</option>
+        <option>这是一串很长很长很长很长很长很长很长很长很长很长很长长很长很长很长很长很长很长很长很长的文字</option>
+    </select>
+    <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+    <script>
+    (function($) {
+        var fontSize, selectWidth;
+
+        function getSubStr(str) {
+            var $text = $("<div/>").appendTo("body").css({
+            	"position":"absolute",
+            	"right":"-10000px",
+                "font-size": fontSize
+            });
+            var result="";
+
+            if($text.text(str).width()<selectWidth) return str;
+
+            for(var i=1;str[i];i++){
+            	var substr=str.substring(0,i)+"…";
+            	if($text.text(substr).width()<selectWidth){
+            		result=substr;
+            	}else{
+            		return result;
+            	}
+            }
+            $text.remove();
+            return result;
+        };
+
+        $.fn.selectLimit = function(width) {
+            return this.each(function() {
+                var $this = $(this);
+                var options = $this.find("option");
+                fontSize = $this.css("font-size");
+                selectWidth = width||$this.width();
+                options.each(function() {
+                    var text = $(this).text();
+                    $(this).text(getSubStr(text)).attr("title",text);
+                })
+            });
+        };
+    })(jQuery);
+
+
+    $(function() {
+        $("#select").selectLimit();
+    })
+    </script>
+</body>
+
+</html>
